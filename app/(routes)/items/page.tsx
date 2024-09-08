@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-import { Card, CardDescription, CardFooter } from '@/components/ui/card';
+import { Card, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, ShoppingBasket } from 'lucide-react';
 import Image from 'next/image';
@@ -9,7 +9,7 @@ const Items = () => {
   const [items, setItems] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const [cartData, setCartData] = useState('');
+  // const [cartData, setCartData] = useState('');
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -43,7 +43,7 @@ const Items = () => {
     itemNumber: number
   }
   const ShoppingItem = ({item}:{item : Item}) => {
-    const handleAddToCart = async (itemNumber : Number) => {
+    const handleAddToCart = async (itemNumber : number) => {
       console.log('itemNumber', itemNumber);
       const payload = { itemNumber: itemNumber };
       await fetch('/api/shopping', {
@@ -63,7 +63,7 @@ const Items = () => {
           <p>Qty: {item.qty} lbs</p>
           <Button
             data-itemNumber={item.itemNumber}
-            onClick={(e) =>
+            onClick={() =>
               handleAddToCart(item.itemNumber)
             }
           ><ShoppingBasket />

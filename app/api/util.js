@@ -1,5 +1,5 @@
-const shoppingData = require('../data/shopping.json');
-const fs = require('fs');
+import shoppingData from '../data/shopping.json';
+import fs from 'fs';
 
 for (let i = 0; i < shoppingData.length; i++) {
   shoppingData[i].itemNumber = i + 1;
