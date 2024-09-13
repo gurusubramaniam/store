@@ -5,4 +5,5 @@ export default function signUp() {
     <div className="flex justify-center">
         <SignUp />
     </div>
+    )
 }

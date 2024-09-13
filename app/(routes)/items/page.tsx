@@ -75,7 +75,7 @@ const Items = () => {
   return (
     <div className="w-12/12 m-10 justify-center">
       <div className="grid gap-10 grid-cols-3 grid-rows-4 m-10">
-        {items.map((item) => (
+        {items.map((item:Item) => (
           <ShoppingItem key={item.id} item={item} />
         ))}
       </div>
