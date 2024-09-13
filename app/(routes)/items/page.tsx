@@ -58,7 +58,7 @@ const Items = () => {
     return (
       <Card >
         <CardDescription>
-        <Image src={item.image} alt={item.name} width="50" height="50" />
+        <Image src={item.image} alt={item.name} width="40" height="40" />
           <p>Cost: ${item.cost}</p>
           <p>Qty: {item.qty} lbs</p>
           <Button
@@ -73,20 +73,22 @@ const Items = () => {
     );
   };
   return (
-    <div className="mx-20 my-20">
-      <div className="grid gap-10 grid-cols-3 grid-rows-3 flex justify-center w-full">
+    <div className="w-12/12 m-10 justify-center">
+      <div className="grid gap-10 grid-cols-3 grid-rows-4 m-10">
         {items.map((item) => (
           <ShoppingItem key={item.id} item={item} />
         ))}
       </div>
-      <div className="flex justify-center w-full my-10">
+      <div className="grid grid-cols-3 grid-rows-1 m-10">
           <Button
           onClick={handlePrevPage}
           disabled={currentPage === 1}
           aria-label="Previous Page">
               <ChevronLeft className="h-4 w-4" />
           </Button>
+          <div className="text-center">
           {currentPage} / {totalPages}&nbsp;&nbsp;&nbsp;
+          </div>
           <Button
           onClick={handleNextPage}
           disabled={currentPage === totalPages}
